@@ -1,0 +1,140 @@
+@import "compass";
+
+@mixin at2x($path, $ext: "png", $w: auto, $h: auto) {
+    background-image: url($path + "." + $ext);
+    $at2x_path: $path + "@2x" + "." + $ext;
+    @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
+        background-image: url($at2x_path);
+        background-size: $w $h;
+    }
+}
+
+// css3 animations
+
+.center {
+    @include transition(all 600ms cubic-bezier(0.19, 1, 0.22, 1));
+}
+
+// clear css3 animations
+
+.off {
+    @include transition(none);
+}
+
+// basic config
+
+a,
+input,
+select,
+textarea,
+button {
+    &:hover,
+    &:active,
+    &:focus {
+        outline: 0 none;
+    }
+}
+
+* {
+    @include box-sizing(border-box);
+}
+
+.wr {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+
+header,
+.main,
+footer {
+    float: left;
+    width: 100%;
+}
+
+.center {
+    margin: 0 auto;
+    text-align: left;
+    width: 940px;
+    clear: both;
+}
+
+// share
+
+.share {
+    margin: 20px 0;
+    width: 100%;
+    display: inline-block;
+    clear: both;
+
+    .fb {
+        float: left;
+        margin: 0 10px 0 0;
+    }
+
+    .tw {
+        float: left;
+        margin: 0 10px 0 0;
+    }
+
+    .gp {
+        float: left;
+    }
+}
+
+// fitvids
+
+.fit-video {
+    width: 100%;
+}
+
+// custom colors
+
+$white: white;
+$black: black;
+
+// custom
+
+::-moz-selection {
+    background: $black;
+    color: $white;
+}
+
+::selection {
+    background: $black;
+    color: $white;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+}
+
+body {
+    @include at2x("../img/loading", gif, 16px, 16px);
+    background: $white;
+    overflow-x: hidden;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+.teste {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    @include transform(rotateX(180deg) rotateY(180deg) rotateZ(0deg));
+
+    > div {
+        @include transform(rotateX(0deg) rotateY(0deg) rotateZ(180deg));
+
+        > div {
+            @include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+        }
+    }
+}
+
+@import "main-responsive.scss";
