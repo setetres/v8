@@ -9,6 +9,17 @@
     }
 }
 
+@font-face {
+    font-family: 'apercu_promono';
+    src: url('apercu_pro_mono-webfont.eot');
+    src: url('apercu_pro_mono-webfont.eot?#iefix') format('embedded-opentype'),
+         url('apercu_pro_mono-webfont.woff') format('woff'),
+         url('apercu_pro_mono-webfont.ttf') format('truetype'),
+         url('apercu_pro_mono-webfont.svg#apercu_promono') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 // css3 animations
 
 .center {
@@ -55,7 +66,7 @@ footer {
 .center {
     margin: 0 auto;
     text-align: left;
-    width: 940px;
+    width: 100%;
     clear: both;
 }
 
@@ -116,6 +127,77 @@ body {
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
+    font-family: 'apercu_promono';
+    font-weight: normal;
+    font-style: normal;
+    text-transform: uppercase;
+}
+
+// header
+
+header {
+    float: none;
+    display: inline-block;
+    background: $black;
+    color: $white;
+    margin-top: 80px;
+    margin-bottom: 80px;
+
+    // logo
+
+    .logo {
+        float: left;
+        margin: 0;
+        font-weight: normal;
+        font-style: normal;
+        font-size: 11px;
+        line-height: 11px;
+        position: relative;
+
+        a {
+            float: left;
+            padding: 10px 20px;
+        }
+
+        i {
+            position: absolute;
+            top: -45px;
+            left: 20px;
+            font-style: normal;
+            font-size: 40px;
+            display: inline-block;
+            color: $black
+        }
+    }
+
+    // menu
+
+    .menu {
+        margin: 0;
+        padding: 0;
+        float: right;
+        list-style-type: none;
+        font-size: 11px;
+        line-height: 12px;
+
+        li {
+            float: left;
+            border-left: 1px solid $white;
+
+            a {
+                float: left;
+                padding: 10px 20px;
+            }
+        }
+    }
+
+    // commom
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
+
 }
 
 .teste {
@@ -126,15 +208,23 @@ body {
     left: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    @include transform(rotateX(180deg) rotateY(180deg) rotateZ(0deg));
+    @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
 
     > div {
-        @include transform(rotateX(0deg) rotateY(0deg) rotateZ(180deg));
+        bottom: 0;
+        position: relative;
+        @include transform(rotateX(180deg) rotateY(0deg) rotateZ(180deg));
+        padding: 0 80px;
 
         > div {
-            @include transform(rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+            padding-bottom: 80px;
         }
     }
+}
+
+footer {
+    float: none;
+    display: inline-block;
 }
 
 @import "main-responsive.scss";
