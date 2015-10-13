@@ -1,14 +1,5 @@
 @import "compass";
 
-@mixin at2x($path, $ext: "png", $w: auto, $h: auto) {
-    background-image: url($path + "." + $ext);
-    $at2x_path: $path + "@2x" + "." + $ext;
-    @media all and (-webkit-min-device-pixel-ratio: 1.5), all and (-o-min-device-pixel-ratio: 3 / 2), all and (min--moz-device-pixel-ratio: 1.5), all and (min-device-pixel-ratio: 1.5) {
-        background-image: url($at2x_path);
-        background-size: $w $h;
-    }
-}
-
 @font-face {
     font-family: 'apercu_promono';
     src: url('apercu_pro_mono-webfont.eot');
@@ -22,14 +13,11 @@
 
 // css3 animations
 
-.center {
+.center,
+header,
+.teste > div,
+.teste > div > div {
     @include transition(all 600ms cubic-bezier(0.19, 1, 0.22, 1));
-}
-
-// clear css3 animations
-
-.off {
-    @include transition(none);
 }
 
 // basic config
@@ -70,29 +58,6 @@ footer {
     clear: both;
 }
 
-// share
-
-.share {
-    margin: 20px 0;
-    width: 100%;
-    display: inline-block;
-    clear: both;
-
-    .fb {
-        float: left;
-        margin: 0 10px 0 0;
-    }
-
-    .tw {
-        float: left;
-        margin: 0 10px 0 0;
-    }
-
-    .gp {
-        float: left;
-    }
-}
-
 // fitvids
 
 .fit-video {
@@ -103,17 +68,21 @@ footer {
 
 $white: white;
 $black: black;
+// $background: #004853;
+// $accent: #00B9BD;
+$background: #2D1D1B;
+$accent: #DFE0BD;
 
 // custom
 
 ::-moz-selection {
-    background: $black;
-    color: $white;
+    background: $accent;
+    color: $background;
 }
 
 ::selection {
-    background: $black;
-    color: $white;
+    background: $accent;
+    color: $background;
 }
 
 html, body {
@@ -122,8 +91,8 @@ html, body {
 }
 
 body {
-    @include at2x("../img/loading", gif, 16px, 16px);
-    background: $white;
+    //@include at2x("../img/loading", gif, 16px, 16px);
+    background: $background;
     overflow-x: hidden;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
@@ -133,15 +102,37 @@ body {
     text-transform: uppercase;
 }
 
+// blink
+
+#blink {
+    font-style: normal;
+    font-size: 34px;
+    line-height: 70px;
+    text-align: center;
+    float: left;
+    background: backgroundaccent;
+    background: $accent;
+    color: $background;
+    width: 73px;
+    height: 73px;
+    cursor: pointer;
+}
+
 // header
 
 header {
     float: none;
     display: inline-block;
-    background: $black;
-    color: $white;
-    margin-top: 80px;
-    margin-bottom: 80px;
+    margin-top: 73px;
+
+    > div {
+        display: inline-block;
+        width: 100%;
+        background: backgroundaccent;
+        background: $accent;
+        color: $background;
+        margin-top: 1px;
+    }
 
     // logo
 
@@ -150,23 +141,13 @@ header {
         margin: 0;
         font-weight: normal;
         font-style: normal;
-        font-size: 11px;
-        line-height: 11px;
+        font-size: 13px;
+        line-height: 13px;
         position: relative;
 
         a {
             float: left;
             padding: 10px 20px;
-        }
-
-        i {
-            position: absolute;
-            top: -45px;
-            left: 20px;
-            font-style: normal;
-            font-size: 40px;
-            display: inline-block;
-            color: $black
         }
     }
 
@@ -177,12 +158,12 @@ header {
         padding: 0;
         float: right;
         list-style-type: none;
-        font-size: 11px;
+        font-size: 13px;
         line-height: 12px;
 
         li {
             float: left;
-            border-left: 1px solid $white;
+            border-left: 1px solid $background;
 
             a {
                 float: left;
@@ -194,7 +175,7 @@ header {
     // commom
 
     a {
-        color: $white;
+        color: $background;
         text-decoration: none;
     }
 
@@ -217,7 +198,10 @@ header {
         padding: 0 80px;
 
         > div {
-            padding-bottom: 80px;
+            font-size: 13px;
+            line-height: 20px;
+            padding-bottom: 73px;
+            color: #DEAE66;
         }
     }
 }

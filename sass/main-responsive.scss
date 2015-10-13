@@ -64,4 +64,18 @@
     .center {
         width: 100%;
     }
+
+    header {
+        margin-top: 0;
+    }
+
+    .teste {
+        > div {
+            padding: 1px;
+
+            > div {
+                padding-bottom: 0;
+            }
+        }
+    }
 }
