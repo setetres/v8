@@ -34,74 +34,75 @@
         <script src="js/modernizr.js"></script>
     </head>
     <body>
-        <div id="fb-root"></div>
-        <div class="teste">
+        <header>
+            <div id="demo-simple-slider" class="dragdealer">
+                <div class="handle">
+                    <i id="blink"></i>
+                </div>
+            </div>
+            <div class="bar">
+                <div class="info">
+                    <div class="slide one">
+                        ↑ Drag &#8212; Welcome to 73
+                    </div>
+                    <div class="slide two">
+                        BACKGROUND VIDEO OR IMAGE
+                    </div>
+                </div>
+                <!-- <h1 class="logo"><a href="/">setetres.st</a></h1>
+                <nav role="navigation">
+                    <ul class="menu">
+                        <li><a href="#">Item #1</a></li>
+                        <li><a href="#">Item #2</a></li>
+                        <li><a href="#">v8</a></li>
+                    </ul>
+                </nav> -->
+            </div>
+        </header>
+        <div class="mirror">
             <div>
                 <div>
-                    <header>
-                        <i id="blink"></i>
-                        <div>
-                            <h1 class="logo"><a href="/">setetres.st </a></h1>
-                            <nav role="navigation">
-                                <ul class="menu">
-                                    <li><a href="#">Item #1</a></li>
-                                    <li><a href="#">Item #2</a></li>
-                                    <li><a href="#">v8</a></li>
-                                </ul>
-                            </nav>
+                    <div id="main" role="main" class="main">
+                        <div class="content">
+                            <div class="slide one">
+                                <p>My name is Guilherme Pangnotta.<br/>I'm a web developer and web designer from Belo Horizonte, Brazil.</p>
+                                <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu libero ut nisi dapibus malesuada. Cras aliquam elit tincidunt enim posuere ornare. Nam porttitor sapien sed quam fringilla luctus. Integer sit amet mi metus. Proin neque dolor, aliquam a neque porta, auctor convallis eros. Quisque venenatis ante eget facilisis lacinia. Pellentesque ultrices ultrices leo nec fringilla.</p>
+                                <p>Morbi vel tellus est. Sed maximus vulputate ipsum vel efficitur. Maecenas ullamcorper sollicitudin enim vestibulum vestibulum. Etiam a ante laoreet, posuere ex in, semper diam. Curabitur dolor lectus, bibendum ac fermentum nec, lobortis et tortor. Donec risus sem, laoreet sit amet elit sit amet, scelerisque hendrerit mi. Morbi vitae leo maximus, auctor eros eu, venenatis ante. Duis vitae ligula ut tellus rutrum ultrices ut id mi. Duis at mattis orci. Cras neque erat, scelerisque et vestibulum in, tristique sed nisi.</p>
+                                <p>In sit amet ligula nulla. Pellentesque sagittis rhoncus eros et tincidunt. Donec tortor orci, auctor id luctus sit amet, dapibus id tortor. Suspendisse vitae risus vel nisl congue imperdiet. Aliquam at porta neque. Nulla dolor mauris, sodales sit amet eros nec, consequat mollis libero. Nunc molestie bibendum dolor, non interdum odio interdum in. Morbi sed nisi hendrerit, volutpat urna ut, consequat velit. Vestibulum nisi sem, iaculis eu sapien quis, dignissim cursus lacus. Ut congue, odio quis sodales placerat, nulla felis consectetur nulla, et dictum dolor dui ac mi.</p>
+                                <p>Vestibulum et massa tristique, sodales justo ut, interdum tellus. In nec posuere ante. Praesent aliquam massa mauris, in efficitur leo euismod sed. Praesent a vestibulum sem. Praesent scelerisque quis nunc ut eleifend. Integer ut vestibulum dui. Praesent vehicula efficitur nunc, vitae rhoncus nulla efficitur eu. Pellentesque non luctus ligula. Sed ut quam rhoncus, semper ex quis, sodales ipsum. Vestibulum tristique nisl eros, in gravida nunc consequat eu. Aliquam purus neque, sodales in ipsum eu, vulputate pretium dolor. Nulla et rhoncus nulla. Etiam ante lectus, gravida maximus nunc vitae, porta placerat lectus. Ut congue nisi ac turpis volutpat aliquam. Vestibulum ac rhoncus magna. Quisque ac nulla eu quam ornare varius.</p>
+                                <p>Mauris lobortis gravida massa, vitae pulvinar nunc semper ut. Mauris gravida odio ut pulvinar sollicitudin. Cras volutpat auctor eros vel consectetur. Integer orci nunc, ultrices volutpat fringilla at, tempus quis odio. Aliquam ornare nisi ut dui ultricies viverra. Donec mi lorem, luctus sit amet nunc at, placerat lacinia sem. Duis tempus magna non mauris placerat ornare. Maecenas augue risus, malesuada quis mattis vitae, dignissim nec dui. Proin id convallis libero. Mauris viverra euismod justo, sit amet cursus augue fringilla ultricies. Curabitur auctor tempor risus quis sodales. Phasellus efficitur facilisis bibendum.</p>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent eu libero ut nisi dapibus malesuada. Cras aliquam elit tincidunt enim posuere ornare. Nam porttitor sapien sed quam fringilla luctus. Integer sit amet mi metus. Proin neque dolor, aliquam a neque porta, auctor convallis eros. Quisque venenatis ante eget facilisis lacinia. Pellentesque ultrices ultrices leo nec fringilla.</p>
+                                <p>Morbi vel tellus est. Sed maximus vulputate ipsum vel efficitur. Maecenas ullamcorper sollicitudin enim vestibulum vestibulum. Etiam a ante laoreet, posuere ex in, semper diam. Curabitur dolor lectus, bibendum ac fermentum nec, lobortis et tortor. Donec risus sem, laoreet sit amet elit sit amet, scelerisque hendrerit mi. Morbi vitae leo maximus, auctor eros eu, venenatis ante. Duis vitae ligula ut tellus rutrum ultrices ut id mi. Duis at mattis orci. Cras neque erat, scelerisque et vestibulum in, tristique sed nisi.</p>
+                                <p>In sit amet ligula nulla. Pellentesque sagittis rhoncus eros et tincidunt. Donec tortor orci, auctor id luctus sit amet, dapibus id tortor. Suspendisse vitae risus vel nisl congue imperdiet. Aliquam at porta neque. Nulla dolor mauris, sodales sit amet eros nec, consequat mollis libero. Nunc molestie bibendum dolor, non interdum odio interdum in. Morbi sed nisi hendrerit, volutpat urna ut, consequat velit. Vestibulum nisi sem, iaculis eu sapien quis, dignissim cursus lacus. Ut congue, odio quis sodales placerat, nulla felis consectetur nulla, et dictum dolor dui ac mi.</p>
+                                <p>Vestibulum et massa tristique, sodales justo ut, interdum tellus. In nec posuere ante. Praesent aliquam massa mauris, in efficitur leo euismod sed. Praesent a vestibulum sem. Praesent scelerisque quis nunc ut eleifend. Integer ut vestibulum dui. Praesent vehicula efficitur nunc, vitae rhoncus nulla efficitur eu. Pellentesque non luctus ligula. Sed ut quam rhoncus, semper ex quis, sodales ipsum. Vestibulum tristique nisl eros, in gravida nunc consequat eu. Aliquam purus neque, sodales in ipsum eu, vulputate pretium dolor. Nulla et rhoncus nulla. Etiam ante lectus, gravida maximus nunc vitae, porta placerat lectus. Ut congue nisi ac turpis volutpat aliquam. Vestibulum ac rhoncus magna. Quisque ac nulla eu quam ornare varius.</p>
+                                <p>Mauris lobortis gravida massa, vitae pulvinar nunc semper ut. Mauris gravida odio ut pulvinar sollicitudin. Cras volutpat auctor eros vel consectetur. Integer orci nunc, ultrices volutpat fringilla at, tempus quis odio. Aliquam ornare nisi ut dui ultricies viverra. Donec mi lorem, luctus sit amet nunc at, placerat lacinia sem. Duis tempus magna non mauris placerat ornare. Maecenas augue risus, malesuada quis mattis vitae, dignissim nec dui. Proin id convallis libero. Mauris viverra euismod justo, sit amet cursus augue fringilla ultricies. Curabitur auctor tempor risus quis sodales. Phasellus efficitur facilisis bibendum.</p> -->
+                            </div>
+                            <div class="slide two">
+                                <footer>
+                                    <div class="center">
+                                        <p>Creative Commons Attribution License 2015</p>
+                                    </div>
+                                </footer>
+                            </div>
                         </div>
-                    </header>
-                    <p>Hello. My name is Guilherme Pangnotta.<br/>I'm a web developer and web designer from Belo Horizonte, Brazil.</p>
-                    <footer>
-                        <div class="center">
-                            <p>Creative Commons Attribution License 2015</p>
-                        </div>
-                    </footer>
+
+                    </div>
+
                 </div>
             </div>
         </div>
-        <!-- <div id="wr" class="wr">
-            <div id="main" role="main" class="main">
-                <div class="center">
-                    <div class="fit-video">
-                        <iframe width="425" height="240" src="http://www.youtube.com/embed/M7FIvfx5J10" frameborder="0" allowfullscreen></iframe>
-                    </div>
-                </div>
+        <div class="home">
+            <div class="slide one">
+                BACKGROUND VIDEO OR IMAGE
             </div>
-        </div> -->
+            <div class="slide two">
+                BACKGROUND VIDEO OR IMAGE
+            </div>
+        </div>
         <script src="js/jquery.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/functions.js"></script>
         <script>
-
-            // facebook
-
-            (function(d, s, id) {
-                var js, fjs = d.getElementsByTagName(s)[0];
-                if (d.getElementById(id)) return;
-                js = d.createElement(s); js.id = id;
-                js.src = "//connect.facebook.net/en_US/all.js#xfbml=1v2.3&&appId=155658704635453";
-                fjs.parentNode.insertBefore(js, fjs);
-            }(document, 'script', 'facebook-jssdk'));
-
-            // twitter
-
-            !function(d,s,id){
-                var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';
-                if(!d.getElementById(id)){
-                js=d.createElement(s); js.id=id;
-                js.src=p+'://platform.twitter.com/widgets.js';
-                fjs.parentNode.insertBefore(js,fjs);
-            }}(document, 'script', 'twitter-wjs');
-
-            // google plus
-
-            window.___gcfg = {lang: 'en-US'};
-            (function() {
-                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
-                po.src = 'https://apis.google.com/js/platform.js';
-                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
-            })();
 
             // analytics
 
