@@ -68,10 +68,8 @@ footer {
 
 $white: white;
 $black: black;
-// $background: #004853;
-// $accent: #00B9BD;
 $background: #263238;
-$accent: #73d0c7;
+$accent: #A30006;
 
 // custom
 
@@ -93,7 +91,7 @@ html, body {
 body {
     //@include at2x("../img/loading", gif, 16px, 16px);
     background: $background;
-    overflow-x: hidden;
+    overflow: hidden;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-family: 'apercu_promono';
@@ -111,7 +109,7 @@ body {
     text-align: center;
     float: left;
     background: $accent;
-    color: $background;
+    color: $white;
     width: 73px;
     height: 73px;
 }
@@ -133,9 +131,8 @@ header {
     .bar {
         display: inline-block;
         width: 100%;
-        background: backgroundaccent;
         background: $accent;
-        color: $background;
+        color: $white;
         margin-top: 1px;
     }
 
@@ -196,20 +193,23 @@ header {
     left: 0;
     overflow-y: scroll;
     overflow-x: hidden;
-    @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
     z-index: 2;
+    @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+    //@include transform(rotate(180deg));
 
     > div {
-        bottom: 0;
+        width: 100%;
+        left: 0;
+        top: 0;
         position: relative;
-        @include transform(rotateX(180deg) rotateY(0deg) rotateZ(180deg));
-        padding: 0 80px;
+        @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+        // @include transform(rotateX(180deg) rotateY(180deg) rotateZ(0deg));
+        // @include transform-origin(top, center, null, null);
 
         > div {
             font-size: 13px;
             line-height: 20px;
-            padding-bottom: 73px;
-            color: #e3e7ee;
+            color: $white;
         }
     }
 }
@@ -221,19 +221,18 @@ header {
     position: relative;
     z-index: 1;
     height: 100%;
+    color: yellow;
 
     .slide {
         position: relative;
         height: 100%;
 
         &.one {
-            background: $background;
             float: left;
             width: 50%;
         }
 
         &.two {
-            background: darken($background, 3%);
             float: left;
             width: 50%;
         }
@@ -248,6 +247,10 @@ header {
     .slide {
         position: relative;
         padding: 10px 20px;
+
+        span {
+            float: right;
+        }
 
         &.one {
             float: left;
@@ -277,15 +280,32 @@ header {
             &.one {
                 float: left;
                 width: 50%;
-                padding: 100px;
+                padding: 100px 100px 150px 100px;
             }
 
             &.two {
                 float: left;
                 width: 50%;
-                padding: 100px;
+                padding: 100px 100px 150px 100px;
             }
         }
+    }
+}
+
+.background-video {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        overflow: hidden;
+        position: absolute;
+        bottom: 0;
     }
 }
 
