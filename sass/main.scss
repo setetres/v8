@@ -34,8 +34,11 @@ button {
     }
 }
 
-* {
+*,
+*:before,
+*:after {
     @include box-sizing(border-box);
+    @include user-select(none);
 }
 
 .wr {
@@ -98,6 +101,7 @@ body {
     font-weight: normal;
     font-style: normal;
     text-transform: uppercase;
+    cursor: default;
 }
 
 // blink
@@ -180,7 +184,6 @@ header {
         color: $background;
         text-decoration: none;
     }
-
 }
 
 // mirror
@@ -217,11 +220,12 @@ header {
 // main
 
 .home {
-    width: 200%;
+    width: 100%;
     position: relative;
     z-index: 1;
     height: 100%;
     color: yellow;
+    left: 100%;
 
     .slide {
         position: relative;
@@ -230,11 +234,13 @@ header {
         &.one {
             float: left;
             width: 50%;
+            padding: 100px 100px 150px 100px;
         }
 
         &.two {
             float: left;
             width: 50%;
+            padding: 100px 100px 150px 100px;
         }
     }
 }
