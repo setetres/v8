@@ -1,22 +1,23 @@
 $(document).ready(function(){
 
     $(function() {
-  new Dragdealer('demo-simple-slider', {
-    // Allow page to be opened with the test results directly
-    x: window.location.hash == '#runner' ? 1 : 0,
-    steps: 2,
-    animationCallback: function(x) {
-      $('.home').css('margin-left', (-x * 100) + '%');
-      $('.info').css('margin-left', (-x * 100) + '%');
-      $('.content').css('margin-left', (x * 100) + '%');
-      if (x > 0.5) {
-        // $('#main .slide.one').height($('#main .slide.two').height());
-      } else {
-        // $('#main .slide.one').height('auto');
-      }
-    }
-  });
-});
+        new Dragdealer('drag', {
+            x: window.location.hash == '#about' ? 1 : 0,
+            steps: 2,
+            animationCallback: function(x) {
+                $('.about .slides').css('margin-left', (-x * 100) + '%');
+                $('.content .slides').css('margin-left', (x * 100) + '%');
+                $('.bar .slides').css('margin-left', (-x * 100) + '%');
+                if (x > 0.5) {
+                    $('#blink').addClass('back');
+                    //$('#main .slide.one').height($('#main .slide.two').height());
+                } else {
+                    $('#blink').removeClass('back');
+                    //$('#main .slide.one').height('auto');
+                }
+            }
+        });
+    });
 
     // blink
 

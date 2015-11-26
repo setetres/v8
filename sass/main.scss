@@ -93,7 +93,6 @@ html, body {
 }
 
 body {
-    //@include at2x("../img/loading", gif, 16px, 16px);
     background: $background;
     overflow: hidden;
     -webkit-text-size-adjust: 100%;
@@ -105,7 +104,7 @@ body {
     cursor: default;
 }
 
-// blink
+// drag!
 
 .handle {
     float: left;
@@ -145,6 +144,18 @@ body {
             left: 100%;
         }
     }
+
+    &.back {
+        &:before {
+            left: 73px;
+        }
+
+        &:hover {
+            &:before {
+                left: -100%;
+            }
+        }
+    }
 }
 
 // header
@@ -171,72 +182,34 @@ header {
         }
     }
 
-    // menu
-
-    .menu {
-        margin: 0;
-        padding: 0;
-        float: right;
-        list-style-type: none;
-        font-size: 13px;
-        line-height: 35px;
-
-        li {
-            float: left;
-            border-left: 1px solid $background;
-
-            a {
-                float: left;
-                padding: 0 20px;
-            }
-        }
-    }
-
-    // commom
-
     a {
-        color: $background;
+        color: $white;
         text-decoration: none;
     }
+
+    // menu
+
+    // .menu {
+    //     margin: 0;
+    //     padding: 0;
+    //     float: right;
+    //     list-style-type: none;
+    //     font-size: 13px;
+    //     line-height: 35px;
+
+    //     li {
+    //         float: left;
+    //         border-left: 1px solid $background;
+
+    //         a {
+    //             float: left;
+    //             padding: 0 20px;
+    //         }
+    //     }
+    // }
 }
 
-// mirror
-
-.mirror {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    overflow-y: scroll;
-    overflow-x: hidden;
-    z-index: 2;
-    @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
-    //@include transform(rotate(180deg));
-
-    > div {
-        width: 100%;
-        left: 0;
-        top: 0;
-        position: relative;
-        @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
-        // @include transform(rotateX(180deg) rotateY(180deg) rotateZ(0deg));
-        // @include transform-origin(top, center, null, null);
-
-        > div {
-            font-size: 13px;
-            line-height: 20px;
-            color: $white;
-
-            a {
-                color: $white;
-                text-decoration: none;
-            }
-        }
-    }
-}
-
-// info bar
+// header bar
 
 .bar {
     display: inline-block;
@@ -246,7 +219,7 @@ header {
     margin-top: 1px;
     font-size: 13px;
 
-    .content {
+    .slides {
         width: 200%;
         position: relative;
         z-index: 1;
@@ -254,11 +227,6 @@ header {
         .slide {
             position: relative;
             padding: 10px 20px;
-
-            a {
-                color: $white;
-                text-decoration: none;
-            }
 
             span {
                 float: right;
@@ -277,58 +245,94 @@ header {
     }
 }
 
+// mirror
+
+.mirror {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    z-index: 2;
+    @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+
+    > div {
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: relative;
+        @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+
+        > div {
+            font-size: 13px;
+            line-height: 20px;
+            color: $white;
+
+            a {
+                color: $white;
+                text-decoration: none;
+            }
+        }
+    }
+}
+
 // main
 
 .main {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
 
-    .home {
-        width: 100%;
-        position: absolute;
-        z-index: 1;
-        height: 100%;
-        color: yellow;
-        left: 100%;
+    // about
 
-        .slide {
-            position: relative;
+    .about {
+        .slides {
+            width: 100%;
+            position: absolute;
+            z-index: 1;
             height: 100%;
+            color: yellow;
+            left: 100%;
 
-            &.one {
-                float: left;
-                width: 50%;
-                padding: 100px 100px 150px 100px;
-            }
+            .slide {
+                position: relative;
+                height: 100%;
 
-            &.two {
-                float: left;
-                width: 50%;
-                padding: 100px 100px 150px 100px;
+                &.one {
+                    float: left;
+                    width: 50%;
+                    padding: 100px 100px 150px 100px;
+                }
+
+                &.two {
+                    float: left;
+                    width: 50%;
+                    padding: 100px 100px 150px 100px;
+                }
             }
         }
     }
 
+    // content
+
     .content {
-        width: 100%;
-        position: relative;
-        z-index: 1;
+        .slides {
+            width: 100%;
+            position: relative;
+            z-index: 1;
 
-        .slide {
-            &.one {
-                float: left;
-                width: 100%;
-                padding: 100px 100px 150px 100px;
+            .slide {
+                &.one {
+                    float: left;
+                    width: 100%;
+                    padding: 100px 100px 150px 100px;
+                }
+
+                // &.two {
+                //     float: left;
+                //     width: 50%;
+                //     padding: 100px 100px 150px 100px;
+                // }
             }
-
-            // &.two {
-            //     float: left;
-            //     width: 50%;
-            //     padding: 100px 100px 150px 100px;
-            // }
         }
     }
 }
