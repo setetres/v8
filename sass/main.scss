@@ -15,9 +15,9 @@
 
 .center,
 header,
+#blink:before,
 .mirror > div,
-.mirror > div > div,
-#blink:before {
+.mirror > div > div {
     @include transition(all 600ms cubic-bezier(0.19, 1, 0.22, 1));
 }
 
@@ -186,27 +186,6 @@ header {
         color: $white;
         text-decoration: none;
     }
-
-    // menu
-
-    // .menu {
-    //     margin: 0;
-    //     padding: 0;
-    //     float: right;
-    //     list-style-type: none;
-    //     font-size: 13px;
-    //     line-height: 35px;
-
-    //     li {
-    //         float: left;
-    //         border-left: 1px solid $background;
-
-    //         a {
-    //             float: left;
-    //             padding: 0 20px;
-    //         }
-    //     }
-    // }
 }
 
 // header bar
@@ -300,13 +279,13 @@ header {
                 &.one {
                     float: left;
                     width: 50%;
-                    padding: 100px 100px 150px 100px;
+                    padding: 100px 50px 150px 100px;
                 }
 
                 &.two {
                     float: left;
                     width: 50%;
-                    padding: 100px 100px 150px 100px;
+                    padding: 100px 100px 150px 50px;
                 }
             }
         }
@@ -340,9 +319,15 @@ header {
 // projects
 
 .projects {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
     > li {
         width: 100%;
         border-bottom: 1px solid $white;
+        opacity: 1;
+        position: relative;
     }
 }
 
