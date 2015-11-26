@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
     window.sr = new scrollReveal({
-        easing: 'ease-in-out',
+        easing: 'cubic-bezier(0.19, 1, 0.22, 1)',
         over:   '0.3s',
         move:   '100px',
-        enter:   'left'
+        enter:  'left',
+        viewport: document.getElementById('mirror')
     });
 
     $(function() {
