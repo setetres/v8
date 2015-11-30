@@ -14,7 +14,6 @@
 // css3 animations
 
 .center,
-header,
 #blink:before,
 .mirror > div,
 .mirror > div > div {
@@ -279,13 +278,13 @@ header {
                 &.one {
                     float: left;
                     width: 50%;
-                    padding: 100px 50px 150px 100px;
+                    padding: 10vw 5vw 10vw 10vw;
                 }
 
                 &.two {
                     float: left;
                     width: 50%;
-                    padding: 100px 100px 150px 50px;
+                    padding: 10vw 5vw 10vw 10vw;
                 }
             }
         }
@@ -303,14 +302,8 @@ header {
                 &.one {
                     float: left;
                     width: 100%;
-                    padding: 100px 100px 150px 100px;
+                    padding: 4vw 6vw;
                 }
-
-                // &.two {
-                //     float: left;
-                //     width: 50%;
-                //     padding: 100px 100px 150px 100px;
-                // }
             }
         }
     }
@@ -328,6 +321,34 @@ header {
         border-bottom: 1px solid $white;
         opacity: 1;
         position: relative;
+        padding: 2vw 0;
+
+        .title {
+            font-family: 'Times New Roman';
+            font-weight: bold;
+            font-style: normal;
+            font-size: 10vw;
+            line-height: 10vw;
+            white-space: nowrap;
+            text-overflow: ellipsis;
+            position: relative;
+            letter-spacing: -1vw;
+            margin: 0;
+            // @include transition(letter-spacing 600ms cubic-bezier(0.19, 1, 0.22, 1), transform 300ms cubic-bezier(0.19, 1, 0.22, 1));
+            // @include transform-origin(0%, 50%, null, null);
+            @include transition(letter-spacing 300ms cubic-bezier(0.19, 1, 0.22, 1));
+        }
+
+        p {
+            margin: 0 0 1vw 0;
+        }
+
+        &:hover {
+            .title {
+                // @include transform(perspective(800px) rotateX(0deg) rotateY(20deg) rotateZ(0deg));
+                letter-spacing: 12vw;
+            }
+        }
     }
 }
 
