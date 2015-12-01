@@ -17,10 +17,10 @@ $(document).ready(function(){
                 $('.about .slides').css('margin-left', (-x * 100) + '%');
                 $('.content .slides').css('margin-left', (x * 100) + '%');
                 if (x > 0.5) {
-                    $('#blink').addClass('back');
+                    $('.handle').addClass('back');
                     //$('#main .slide.one').height($('#main .slide.two').height());
                 } else {
-                    $('#blink').removeClass('back');
+                    $('.handle').removeClass('back');
                     //$('#main .slide.one').height('auto');
                 }
             }

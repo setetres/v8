@@ -1,12 +1,12 @@
 @import "compass";
 
 @font-face {
-    font-family: 'apercu_promono';
+    font-family: 'Apercu Pro Mono';
     src: url('apercu_pro_mono-webfont.eot');
     src: url('apercu_pro_mono-webfont.eot?#iefix') format('embedded-opentype'),
          url('apercu_pro_mono-webfont.woff') format('woff'),
          url('apercu_pro_mono-webfont.ttf') format('truetype'),
-         url('apercu_pro_mono-webfont.svg#apercu_promono') format('svg');
+         url('apercu_pro_mono-webfont.svg#apercu_pro_mono') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -14,7 +14,7 @@
 // css3 animations
 
 .center,
-#blink:before,
+.projects li:before,
 .mirror > div,
 .mirror > div > div {
     @include transition(all 600ms cubic-bezier(0.19, 1, 0.22, 1));
@@ -96,7 +96,7 @@ body {
     overflow: hidden;
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
-    font-family: 'apercu_promono';
+    font-family: 'Apercu Pro Mono';
     font-weight: normal;
     font-style: normal;
     text-transform: uppercase;
@@ -104,13 +104,6 @@ body {
 }
 
 // drag!
-
-.handle {
-    float: left;
-    width: 73px;
-    height: 73px;
-    cursor: ew-resize;
-}
 
 #blink {
     font-style: normal;
@@ -122,36 +115,65 @@ body {
     color: $white;
     width: 73px;
     height: 73px;
+    opacity: 1;
+    position: relative;
+    z-index: 2;
+}
 
-    &:before {
-        background: $accent;
+.handle {
+    float: left;
+    width: 73px;
+    height: 73px;
+    position: relative;
+    cursor: ew-resize;
+
+    .flip {
         position: absolute;
-        left: -73px;
         top: 0;
-        content: 'Drag!';
-        color: $white;
+        left: 100%;
+        width: 73px;
+        height: 73px;
+        z-index: 1;
         font-size: 13px;
         line-height: 70px;
-        height: 73px;
-        z-index: -1;
-        padding: 0 20px;
-        @include transition-duration(300ms);
+        color: $white;
+        background: darken($accent,20%);
+        @include transform-origin(0%, 50%, null, null);
+        @include transform(perspective(1200px) rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+        @include transition(all 600ms cubic-bezier(0.19, 1, 0.22, 1), background 600ms cubic-bezier(0.19, 1, 0.22, 1) 73ms);
+
+        &:before {
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 73px;
+            height: 73px;
+            content: 'Drag!';
+            text-align: center;
+            @include transform-origin(center, center, null, null);
+        }
     }
 
     &:hover {
-        &:before {
-            left: 100%;
+        .flip {
+            background: $accent;
+            @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
         }
     }
 
     &.back {
-        &:before {
-            left: 73px;
+        .flip {
+            left: 0;
+            @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+
+            &:before {
+                @include transform(rotateY(180deg));
+            }
         }
 
         &:hover {
-            &:before {
-                left: -100%;
+            .flip {
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(180deg) rotateZ(0deg));
             }
         }
     }
@@ -278,13 +300,13 @@ header {
                 &.one {
                     float: left;
                     width: 50%;
-                    padding: 10vw 5vw 10vw 10vw;
+                    // padding: 10vw 5vw 10vw 10vw;
                 }
 
                 &.two {
                     float: left;
                     width: 50%;
-                    padding: 10vw 5vw 10vw 10vw;
+                    // padding: 10vw 5vw 10vw 10vw;
                 }
             }
         }
@@ -302,7 +324,6 @@ header {
                 &.one {
                     float: left;
                     width: 100%;
-                    padding: 4vw 6vw;
                 }
             }
         }
@@ -315,38 +336,58 @@ header {
     margin: 0;
     padding: 0;
     list-style-type: none;
+    padding: 0;
 
     > li {
         width: 100%;
-        border-bottom: 1px solid $white;
+        border-bottom: 1px solid $black;
         opacity: 1;
         position: relative;
-        padding: 2vw 0;
+        padding: 2vw 5vw 2vw 5vw;
+        overflow: hidden;
+
+        &:before {
+            content: '';
+            background: $black;
+            position: absolute;
+            left: 0;
+            width: 100%;
+            bottom: 0;
+            height: 0;
+            pointer-events: none;
+            z-index: -1;
+            @include transition-delay(200ms);
+            // @include background-image(linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%));
+        }
+
+        .title,
+        p {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+        }
 
         .title {
-            font-family: 'Times New Roman';
-            font-weight: bold;
-            font-style: normal;
-            font-size: 10vw;
-            line-height: 10vw;
+            font-size: 20px;
+            line-height: 20px;
             white-space: nowrap;
             text-overflow: ellipsis;
             position: relative;
-            letter-spacing: -1vw;
-            margin: 0;
+            @include transition(letter-spacing 300ms cubic-bezier(0.19, 1, 0.22, 1));
+            // font-size: 10vw;
+            // line-height: 10vw;
             // @include transition(letter-spacing 600ms cubic-bezier(0.19, 1, 0.22, 1), transform 300ms cubic-bezier(0.19, 1, 0.22, 1));
             // @include transform-origin(0%, 50%, null, null);
-            @include transition(letter-spacing 300ms cubic-bezier(0.19, 1, 0.22, 1));
-        }
-
-        p {
-            margin: 0 0 1vw 0;
         }
 
         &:hover {
             .title {
+                letter-spacing: 13vw;
                 // @include transform(perspective(800px) rotateX(0deg) rotateY(20deg) rotateZ(0deg));
-                letter-spacing: 12vw;
+            }
+
+            &:before {
+                height: 200%;
             }
         }
     }
