@@ -267,48 +267,46 @@ header {
         top: 0;
         position: relative;
         @include transform(rotateX(0deg) rotateY(180deg) rotateZ(0deg));
-
-        > div {
-            font-size: 13px;
-            line-height: 20px;
-            color: $white;
-
-            a {
-                color: $white;
-                text-decoration: none;
-            }
-        }
     }
 }
 
 // main
 
 .main {
+    font-size: 13px;
+    line-height: 20px;
+    color: $white;
+
+    a {
+        color: $white;
+        text-decoration: none;
+    }
 
     // about
 
     .about {
         .slides {
             width: 100%;
+            height: 100%;
+            left: 100%;
             position: absolute;
             z-index: 1;
-            height: 100%;
-            color: yellow;
-            left: 100%;
+
+            h1 {
+                margin: 0;
+            }
 
             .slide {
-                position: relative;
-                height: 100%;
-                margin: 0 5vw -1px 5vw;
-
                 &.one {
                     float: left;
                     width: 50%;
+                    padding: 4vw 2.5vw 4vw 5vw;
                 }
 
                 &.two {
                     float: left;
                     width: 50%;
+                    padding: 4vw 5vw 4vw 2.5vw;
                 }
             }
         }
@@ -393,7 +391,18 @@ header {
                     margin-top: -1vw;
                     pointer-events: none;
                     z-index: -1;
-                    @include transition-delay(400ms);
+                    @include transition-delay(300ms);
+                }
+
+                > div {
+                    p {
+                        float: left;
+                        width: 25%;
+
+                        &:last-child {
+                            // text-align: right;
+                        }
+                    }
                 }
             }
         }
@@ -423,26 +432,34 @@ header {
             text-overflow: ellipsis;
             position: relative;
             @include transition(all 600ms cubic-bezier(.20,1,.22,1));
-        }
 
-        p {
-            top: 50%;
-            left: 0;
-            position: absolute;
-            display: none;
+            i {
+                font-style: normal;
+            }
+
+            b {
+                position: relative;
+                font-weight: normal;
+                display: none;
+            }
         }
 
         &:hover {
-            p {
-                top: -0.5vw;
-            }
-
             .title {
                 top: -0.5vw;
                 font-size: 12vw;
                 line-height: 12vw;
                 letter-spacing: 13vw;
                 color: $white;
+
+                i {
+                    display: none;
+                }
+
+                b {
+                    display: inline-block;
+                    left: -3vw;
+                }
             }
 
             > div {
@@ -461,13 +478,6 @@ header {
             }
         }
     }
-}
-
-// footer
-
-footer {
-    float: none;
-    display: inline-block;
 }
 
 @import "main-responsive.scss";
