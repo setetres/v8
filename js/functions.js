@@ -46,7 +46,7 @@ $(document).ready(function(){
 
     // fitvids
 
-    $('.fit-video').fitVids();
+    // $('.fit-video').fitVids();
 
     // window resize
 
@@ -56,18 +56,6 @@ $(document).ready(function(){
     // window load
 
     $(window).on('load',function(){
-        // setTimeout(function(){
-        //     $('.projects > li').each(function(delay) {
-        //         // $(this).animate({opacity: 0, 'left': '0'}, 0).delay(delay * 73).css({'pointer-events': 'all'}).animate({opacity: 1, 'left': '+=10px'}, 150, 'easeOutExpo');
-        //         // $(this).stop().delay(delay * 100).addClass({
-        //         //     opacity: 1
-        //         // }, 300);
-        //         $(this).stop().delay(delay * 100).animate({
-        //             left: '+=50px',
-        //             opacity: '1'
-        //         });
-        //     });
-        // },500);
     });
 
 });
