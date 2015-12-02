@@ -294,7 +294,14 @@ header {
             z-index: 1;
 
             h1 {
-                margin: 0;
+                position: relative;
+                top: -0.1vw;
+                font-size: 2vw;
+                line-height: 2vw;
+            }
+
+            h1, p {
+                margin: 0 0 1vw 0;
             }
 
             .slide {
@@ -342,7 +349,7 @@ header {
     margin: 0;
     padding: 0;
     list-style-type: none;
-    padding: 0 0 189px 0;
+    padding: 0 0 153px 0;
 
     > li {
         width: 100%;
