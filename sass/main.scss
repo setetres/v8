@@ -14,9 +14,9 @@
 // css3 animations
 
 .center,
-.projects li:before,
-.projects li div:before,
-.projects li div:after,
+.project-list li:before,
+.project-list li div:before,
+.project-list li div:after,
 .mirror > div,
 .mirror > div > div {
     @include transition(all 600ms cubic-bezier(.20,1,.22,1));
