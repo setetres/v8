@@ -73,19 +73,18 @@ footer {
 
 $white: white;
 $black: black;
-$background: #111111;
-$accent: #A30006;
+$accent: #0e2e3b;
 
 // custom
 
 ::-moz-selection {
     background: $accent;
-    color: $background;
+    color: $white;
 }
 
 ::selection {
     background: $accent;
-    color: $background;
+    color: $white;
 }
 
 html, body {
@@ -94,8 +93,8 @@ html, body {
 }
 
 body {
-    background: lighten($black,10%);
-    overflow: hidden;
+    background-color: #7DB9B3;
+    @include background-image(linear-gradient(20deg, #166678, #7db9b3 75%, #d8d7c3));
     -webkit-text-size-adjust: 100%;
     -ms-text-size-adjust: 100%;
     font-family: 'Apercu Pro Mono';
@@ -103,6 +102,7 @@ body {
     font-style: normal;
     text-transform: uppercase;
     cursor: default;
+    overflow: hidden;
 }
 
 // drag!
@@ -139,7 +139,7 @@ body {
         font-size: 13px;
         line-height: 70px;
         color: $white;
-        background: darken($accent,20%);
+        background: darken($accent,5%);
         @include transform-origin(0%, 50%, null, null);
         @include transform(perspective(1200px) rotateX(0deg) rotateY(90deg) rotateZ(0deg));
         @include transition(all 600ms cubic-bezier(.20,1,.22,1), background 600ms cubic-bezier(.20,1,.22,1) 73ms);
@@ -288,6 +288,7 @@ header {
         .slides {
             width: 100%;
             height: 100%;
+            top: 0;
             left: 100%;
             position: absolute;
             z-index: 1;
@@ -297,8 +298,12 @@ header {
             }
 
             .slide {
+                position: relative;
+                height: 100%;
+
                 &.one {
                     float: left;
+                    height: 100%;
                     width: 50%;
                     padding: 4vw 2.5vw 4vw 5vw;
                 }
@@ -306,6 +311,7 @@ header {
                 &.two {
                     float: left;
                     width: 50%;
+                    height: 100%;
                     padding: 4vw 5vw 4vw 2.5vw;
                 }
             }
@@ -340,7 +346,7 @@ header {
 
     > li {
         width: 100%;
-        border-bottom: 1px solid $black;
+        border-bottom: 1px solid $accent;
         opacity: 1;
         position: relative;
         padding: 0;
@@ -348,7 +354,7 @@ header {
         > div {
             margin: 0 5vw -1px 5vw;
             padding: 4vw 0;
-            border-bottom: 1px solid lighten($black,20%);
+            border-bottom: 1px solid #d8d7c3;
             position: relative;
 
             &:before {
