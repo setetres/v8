@@ -19,7 +19,7 @@
 .project-list li div:after,
 .mirror > div,
 .mirror > div > div {
-    @include transition(all 600ms cubic-bezier(.20,1,.22,1));
+    @include transition(all 900ms cubic-bezier(.20,1,.22,1));
 }
 
 // basic config
@@ -142,7 +142,7 @@ body {
         background: darken($accent,5%);
         @include transform-origin(0%, 50%, null, null);
         @include transform(perspective(1200px) rotateX(0deg) rotateY(90deg) rotateZ(0deg));
-        @include transition(all 600ms cubic-bezier(.20,1,.22,1), background 600ms cubic-bezier(.20,1,.22,1) 73ms);
+        @include transition(all 900ms cubic-bezier(.20,1,.22,1), background 900ms cubic-bezier(.20,1,.22,1) 73ms);
 
         &:before {
             position: absolute;
@@ -160,7 +160,7 @@ body {
         .flip {
             background: $accent;
             @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
-            @include transition(all 600ms cubic-bezier(.20,1,.22,1), background 600ms cubic-bezier(.20,1,.22,1) 0ms);
+            @include transition(all 900ms cubic-bezier(.20,1,.22,1), background 900ms cubic-bezier(.20,1,.22,1) 0ms);
         }
     }
 
@@ -364,31 +364,35 @@ header {
             border-bottom: 1px solid #d8d7c3;
             position: relative;
 
-            &:before {
-                content: '';
-                background: $white;
-                position: absolute;
-                right: 0;
-                width: 0;
-                bottom: -1px;
-                height: 1px;
-                pointer-events: none;
-                z-index: 2;
-                @include transition-delay(200ms);
-            }
+            // &:before {
+            //     content: '';
+            //     background: $white;
+            //     position: absolute;
+            //     right: 0;
+            //     width: 100%;
+            //     bottom: -1px;
+            //     bottom: 50%;
+            //     margin-bottom: -30px;
+            //     height: 1px;
+            //     pointer-events: none;
+            //     z-index: 2;
+            //     @include transition-delay(200ms);
+            // }
 
-            &:after {
-                content: '';
-                background: $white;
-                position: absolute;
-                left: 0;
-                width: 0;
-                top: -1px;
-                height: 1px;
-                pointer-events: none;
-                z-index: 2;
-                @include transition-delay(200ms);
-            }
+            // &:after {
+            //     content: '';
+            //     background: $white;
+            //     position: absolute;
+            //     left: 0;
+            //     width: 100%;
+            //     top: -1px;
+            //     margin-top: -30px;
+            //     top: 50%;
+            //     height: 1px;
+            //     pointer-events: none;
+            //     z-index: 2;
+            //     @include transition-delay(200ms);
+            // }
 
             > div {
                 position: relative;
@@ -401,10 +405,10 @@ header {
                     left: 0;
                     width: 0;
                     height: 2vw;
-                    margin-top: -1vw;
+                    margin-top: -1.1vw;
                     pointer-events: none;
                     z-index: -1;
-                    @include transition-delay(300ms);
+                    @include transition-delay(450ms);
                 }
 
                 > div {
@@ -428,8 +432,8 @@ header {
         }
 
         h2,
-        .title,
-        p {
+        p,
+        .title {
             position: relative;
             z-index: 1;
             margin: 0;
@@ -453,11 +457,12 @@ header {
         .title {
             top: -0.1vw;
             font-size: 2vw;
+            font-weight: bold;
             line-height: 2vw;
             white-space: nowrap;
             text-overflow: ellipsis;
             position: relative;
-            @include transition(all 600ms cubic-bezier(.20,1,.22,1));
+            @include transition(all 900ms cubic-bezier(.20,1,.22,1));
 
             i {
                 font-style: normal;
