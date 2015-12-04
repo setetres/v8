@@ -1,15 +1,8 @@
 $(document).ready(function(){
 
-    var backgroundAudio=document.getElementsByTagName("audio");
-    backgroundAudio.volume=0.2;
+    // target blank
 
-    window.sr = new scrollReveal({
-        easing: 'cubic-bezier(0.19, 1, 0.22, 1)',
-        over:   '0.3s',
-        move:   '100px',
-        enter:  'left',
-        viewport: document.getElementById('mirror')
-    });
+    $('a[rel=external]').attr('target', '_blank');
 
     // hover
 

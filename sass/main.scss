@@ -408,13 +408,10 @@ header {
                 }
 
                 > div {
-                    p {
+                    p,
+                    h2 {
                         float: left;
                         width: 25%;
-
-                        &:last-child {
-                            // text-align: right;
-                        }
                     }
                 }
             }
@@ -430,11 +427,27 @@ header {
             z-index: 3;
         }
 
+        h2,
         .title,
         p {
             position: relative;
             z-index: 1;
             margin: 0;
+        }
+
+        h2 {
+            font-size: 13px;
+            line-height: 20px;
+            font-weight: normal;
+
+            i {
+                font-style: normal;
+            }
+
+            b {
+                font-weight: normal;
+                display: none;
+            }
         }
 
         .title {
@@ -458,6 +471,16 @@ header {
         }
 
         &:hover {
+            h2 {
+                i {
+                    display: none;
+                }
+
+                b {
+                    display: inline-block;
+                }
+            }
+
             .title {
                 top: -0.5vw;
                 font-size: 12vw;
