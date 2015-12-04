@@ -376,7 +376,7 @@ header {
             //     height: 1px;
             //     pointer-events: none;
             //     z-index: 2;
-            //     @include transition-delay(200ms);
+            //     @include transition-delay(225ms);
             // }
 
             // &:after {
@@ -391,7 +391,7 @@ header {
             //     height: 1px;
             //     pointer-events: none;
             //     z-index: 2;
-            //     @include transition-delay(200ms);
+            //     @include transition-delay(225ms);
             // }
 
             > div {
@@ -506,7 +506,7 @@ header {
             > div {
                 > div {
                     &:before {
-                        @include transition-delay(200ms);
+                        @include transition-delay(225ms);
                         width: 100%;
                         margin-top: -0.9vw;
                     }
