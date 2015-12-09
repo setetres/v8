@@ -343,12 +343,25 @@ header {
     }
 }
 
+// menu
+
+.menu {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+        float: left;
+        width: 50%;
+        border: 1px solid $white;
+    }
+}
+
 // project list
 
 .project-list {
-    margin: 0;
-    padding: 0;
     list-style-type: none;
+    margin: 0;
     padding: 0 0 153px 0;
 
     > li {
