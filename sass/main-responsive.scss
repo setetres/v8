@@ -12,20 +12,6 @@
     .center {
         width: 100%;
     }
-
-    header {
-        margin-top: 40px;
-    }
-
-    .mirror {
-        > div {
-            padding: 0 40px;
-
-            > div {
-                padding-bottom: 40px;
-            }
-        }
-    }
 }
 
 // 9 columns
@@ -42,20 +28,6 @@
     .center {
         width: 100%;
     }
-
-    header {
-        margin-top: 20px;
-    }
-
-    .mirror {
-        > div {
-            padding: 0 20px;
-
-            > div {
-                padding-bottom: 20px;
-            }
-        }
-    }
 }
 
 // 4 columns
@@ -63,19 +35,5 @@
 @media (max-width: 479px) {
     .center {
         width: 100%;
-    }
-
-    header {
-        margin-top: 0;
-    }
-
-    .mirror {
-        > div {
-            padding: 1px;
-
-            > div {
-                padding-bottom: 0;
-            }
-        }
     }
 }

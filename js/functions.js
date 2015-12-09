@@ -24,7 +24,7 @@ $(document).ready(function(){
             animationCallback: function(x) {
                 $('.bar .slides').css('margin-left', (-x * 100) + '%');
                 $('.about .slides').css('margin-left', (-x * 100) + '%');
-                $('.content .slides').css('margin-left', (x * 100) + '%');
+                // $('.content .slides').css('margin-left', (x * 100) + '%');
                 if (x > 0.5) {
                     $('.handle').addClass('back');
                     //$('#main .slide.one').height($('#main .slide.two').height());
@@ -52,10 +52,6 @@ $(document).ready(function(){
         }
     }
     say("☂☔☂☔☂☔☂☔☂☔☂☔☐☒☐☒☐☒☐☑☐☑☐☑♔♚♕♛♖♜♘♞☰☱☲☴☰☱☳☷☶☴☰☴☶☷☳☱☰☴☲☵☲☵☲☰☷☰☷☠ ☠ ☠ ☠ ☠ ☠ 73✢✣✤✥✽✻✼❋❊❉✺✹✸✷✶✦➝➞➟➠➩➪➯➱➩➪➯➱",0);
-
-    // fitvids
-
-    // $('.fit-video').fitVids();
 
     // window resize
 
