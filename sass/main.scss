@@ -284,8 +284,8 @@ header {
 
             p {
                 font-size: 10vw;
-                line-height: 10vw;
-                margin: 0 5vw 0 5vw;;
+                line-height: 11.2vw;
+                margin: 5.3vw 5vw 5vw 5vw;
             }
         }
     }
@@ -347,25 +347,22 @@ header {
         padding: 0;
 
         > div {
-            margin: 0 5vw -1px 5vw;
-            padding: 4vw 0;
-            border-bottom: 1px solid #d8d7c3;
+            margin: 0 5vw 0 5vw;
+            padding: 4.23vw 0 4.22vw 0;
             position: relative;
 
-            // &:before {
-            //     content: '';
-            //     background: $white;
-            //     position: absolute;
-            //     right: 0;
-            //     width: 100%;
-            //     bottom: -1px;
-            //     bottom: 50%;
-            //     margin-bottom: -30px;
-            //     height: 1px;
-            //     pointer-events: none;
-            //     z-index: 2;
-            //     @include transition-delay(225ms);
-            // }
+            &:before {
+                content: '';
+                background: #d8d7c3;
+                position: absolute;
+                right: 0;
+                width: 100%;
+                bottom: -1px;
+                height: 1px;
+                pointer-events: none;
+                z-index: 2;
+                @include transition-delay(225ms);
+            }
 
             // &:after {
             //     content: '';
@@ -416,7 +413,7 @@ header {
             float: left;
             width: 25%;
             font-size: 13px;
-            line-height: 20px;
+            line-height: 13px;
             font-weight: normal;
         }
 
