@@ -15,7 +15,6 @@
 
 .project-list li:before,
 .project-list li div:before,
-.project-list li div:after,
 .mirror > div,
 .mirror > div > div {
     @include transition(all 900ms cubic-bezier(.20,1,.22,1));
@@ -293,45 +292,15 @@ header {
 
             p {
                 font-size: 10vw;
-                line-height: 10vw;
-                margin: 5vw;
+                line-height: 9vw;
+                margin: 5vw 5vw 0 5vw;
 
                 span {
                     position: relative;
                     display: block;
                     clear: both;
-
-                    &:nth-child(2) {
-                        top: 0.8vw;
-                    }
-
-                    &:nth-child(3) {
-                        top: 1.4vw;
-                    }
-
-                    &:nth-child(4) {
-                        top: 2vw;
-                    }
-
-                    &:nth-child(5) {
-                        top: 2.8vw;
-                    }
-
-                    &:nth-child(6) {
-                        top: 3.4vw;
-                    }
-
-                    &:nth-child(7) {
-                        top: 4vw;
-                    }
-
-                    &:nth-child(8) {
-                        top: 4.8vw;
-                    }
-
-                    &:nth-child(9) {
-                        top: 5.4vw;
-                    }
+                    padding: 0 0 1vw 0;
+                    border-bottom: 1px solid transparent;
                 }
             }
         }
@@ -360,7 +329,7 @@ header {
 .project-list {
     list-style-type: none;
     margin: 0;
-    padding: 0 0 153px 0;
+    padding: 0 0 20vw 0;
 
     > li {
         width: 100%;
@@ -370,8 +339,8 @@ header {
         padding: 0;
 
         > div {
-            margin: 0 5vw 0 5vw;
-            padding: 4.23vw 0 4.22vw 0;
+            margin: 0 5vw;
+            padding: 4vw 0;
             position: relative;
 
             &:before {
@@ -386,21 +355,6 @@ header {
                 z-index: 2;
                 @include transition-delay(225ms);
             }
-
-            // &:after {
-            //     content: '';
-            //     background: $white;
-            //     position: absolute;
-            //     left: 0;
-            //     width: 100%;
-            //     top: -1px;
-            //     margin-top: -30px;
-            //     top: 50%;
-            //     height: 1px;
-            //     pointer-events: none;
-            //     z-index: 2;
-            //     @include transition-delay(225ms);
-            // }
 
             > div {
                 position: relative;
@@ -463,6 +417,8 @@ header {
             line-height: 2vw;
             white-space: nowrap;
             text-overflow: ellipsis;
+            display: block;
+            width: 100%;
             position: relative;
             z-index: 1;
             margin: 0;
@@ -488,11 +444,6 @@ header {
                         margin-top: -0.9vw;
                     }
                 }
-            }
-
-            &:before {
-                width: 100%;
-                @include transition-delay(0ms);
             }
 
             h2 {
