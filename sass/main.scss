@@ -14,9 +14,7 @@
 // css3 animations
 
 .project-list li:before,
-.project-list li div:before,
-.mirror > div,
-.mirror > div > div {
+.project-list li .title:before {
     @include transition(all 900ms cubic-bezier(.20,1,.22,1));
 }
 
@@ -355,29 +353,19 @@ header {
                 z-index: 2;
                 @include transition-delay(225ms);
             }
-
-            > div {
-                position: relative;
-
-                &:before {
-                    content: '';
-                    background: $white;
-                    position: absolute;
-                    top: 50%;
-                    left: 0;
-                    width: 0;
-                    height: 2vw;
-                    margin-top: -1.1vw;
-                    pointer-events: none;
-                    z-index: -1;
-                    @include transition-delay(450ms);
-                }
-            }
         }
+
+        // project list - info
 
         .info {
             position: absolute;
             width: 100%;
+
+            h2,
+            p {
+                float: left;
+                width: 25%;
+            }
         }
 
         > a {
@@ -392,8 +380,6 @@ header {
 
         h2,
         p {
-            float: left;
-            width: 25%;
             font-size: 13px;
             line-height: 13px;
             font-weight: normal;
@@ -410,6 +396,8 @@ header {
             }
         }
 
+        // project list - title
+
         .title {
             top: -0.1vw;
             font-size: 2vw;
@@ -424,6 +412,20 @@ header {
             margin: 0;
             @include transition(all 900ms cubic-bezier(.20,1,.22,1));
 
+            &:before {
+                content: '';
+                background: $white;
+                position: absolute;
+                top: 50%;
+                left: 0;
+                width: 0;
+                height: 2.2vw;
+                margin-top: -1vw;
+                pointer-events: none;
+                z-index: -1;
+                @include transition-delay(450ms);
+            }
+
             i {
                 font-style: normal;
             }
@@ -435,17 +437,9 @@ header {
             }
         }
 
-        &:hover {
-            > div {
-                > div {
-                    &:before {
-                        @include transition-delay(225ms);
-                        width: 100%;
-                        margin-top: -0.9vw;
-                    }
-                }
-            }
+        // project list - hover
 
+        &:hover {
             h2 {
                 i {
                     display: none;
@@ -459,9 +453,14 @@ header {
             .title {
                 top: -0.5vw;
                 font-size: 11.5vw;
-                line-height: 11.5vw;
+                line-height: 12vw;
                 letter-spacing: 13vw;
                 color: $white;
+
+                &:before {
+                    @include transition-delay(225ms);
+                    width: 100%;
+                }
 
                 i {
                     display: none;
