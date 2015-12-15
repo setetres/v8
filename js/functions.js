@@ -8,7 +8,7 @@ $(document).ready(function(){
 
     $(".project-list > li").each(function(i) {
         if (i != 0) {
-            $("#hover").clone().attr("id", "hover" + i).appendTo($(this).parent());
+            $("#hover").clone().attr("id", "hover" + i).appendTo($(this));
         }
         $(this).data("hover", i);
     }).mouseenter(function() {

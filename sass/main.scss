@@ -327,7 +327,7 @@ header {
 .project-list {
     list-style-type: none;
     margin: 0;
-    padding: 0 0 20vw 0;
+    padding: 0 0 154px 0;
 
     > li {
         width: 100%;
@@ -471,6 +471,29 @@ header {
                     left: -3vw;
                 }
             }
+        }
+    }
+}
+
+// sub
+
+.sub {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+    width: 100%;
+
+    li {
+        float: left;
+        margin-right: -1px;
+
+        a {
+            display: inline-block;
+            width: 100%;
+            border: 1px solid $white;
+            padding: 1vw;
+            @include border-radius(3px);
         }
     }
 }
