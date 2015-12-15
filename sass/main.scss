@@ -116,91 +116,137 @@ body {
     }
 }
 
-// drag!
-
-#drag {
-    width: 100%;
-    height: 73px;
-    background: rgba($accent, 0.5);
-    position: absolute;
-    bottom: 0;
-}
+// blink icon
 
 #blink {
-    font-style: normal;
     font-size: 34px;
     line-height: 70px;
+    font-style: normal;
     text-align: center;
     float: left;
     background: $accent;
     color: $white;
     width: 73px;
     height: 73px;
-    opacity: 1;
     position: relative;
     z-index: 2;
 }
 
-.handle {
-    float: left;
-    width: 73px;
-    height: 73px;
-    position: relative;
-    cursor: ew-resize;
-    z-index: 3;
+// drag
 
-    .flip {
-        position: absolute;
-        top: 0;
-        left: 100%;
+#drag {
+    width: 100%;
+    height: 73px;
+    background: rgba($accent,0.73);
+    position: absolute;
+    bottom: 0;
+
+    // drag - handle
+
+    .handle {
+        float: left;
         width: 73px;
         height: 73px;
-        z-index: 1;
-        font-size: 13px;
-        line-height: 70px;
-        color: $white;
-        background: darken($accent,5%);
-        @include transform-origin(0%, 50%, null, null);
-        @include transform(perspective(1200px) rotateX(0deg) rotateY(90deg) rotateZ(0deg));
-        @include transition(all 900ms cubic-bezier(.20,1,.22,1), background 900ms cubic-bezier(.20,1,.22,1) 73ms);
-        @include transform-style(preserve-3d);
-        @include backface-visibility(visible);
+        position: relative;
+        cursor: ew-resize;
+        z-index: 3;
 
-        &:before {
+        // drag - flip card
+
+        .flip {
             position: absolute;
-            left: 0;
+            z-index: 2;
             top: 0;
+            left: 0;
             width: 73px;
             height: 73px;
-            content: 'Drag!';
-            text-align: center;
-            @include transform-origin(center, center, null, null);
-            @include transform-style(preserve-3d);
-            @include backface-visibility(visible);
-        }
-    }
 
-    &:hover {
-        .flip {
-            background: $accent;
-            @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
-            @include transition(all 900ms cubic-bezier(.20,1,.22,1), background 900ms cubic-bezier(.20,1,.22,1) 0ms);
-        }
-    }
+            // drag - flip card - both sides
 
-    &.back {
-        .flip {
-            left: 0;
-            @include transform(perspective(1200px) rotateX(0deg) rotateY(90deg) rotateZ(0deg));
+            &:before,
+            &:after {
+                position: absolute;
+                top: 0;
+                width: 73px;
+                height: 73px;
+                content: 'Drag!';
+                text-align: center;
+                font-size: 13px;
+                line-height: 70px;
+                color: $white;
+                background: darken($accent, 5%);
+                @include transition(all 900ms cubic-bezier(.20,1,.22,1), background 900ms cubic-bezier(.20,1,.22,1) 73ms);
+                @include transform-style(preserve-3d);
+                @include backface-visibility(hidden);
+            }
+
+            // drag - flip card - left side
 
             &:before {
-                @include transform(rotateY(180deg));
+                left: -100%;
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(-95deg) rotateZ(0deg));
+                @include transform-origin(top, right, null, null);
+            }
+
+            // drag - flip card - right side
+
+            &:after {
+                left: 100%;
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(95deg) rotateZ(0deg));
+                @include transform-origin(top, left, null, null);
             }
         }
 
+        // flip card - hover
+
         &:hover {
-            .flip {
-                @include transform(perspective(1200px) rotateX(0deg) rotateY(180deg) rotateZ(0deg));
+            .flip:before,
+            .flip:after {
+                background: $accent;
+            }
+
+            .flip:before {
+                background: darken($accent, 5%);
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(-95deg) rotateZ(0deg));
+            }
+
+            .flip:after {
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+            }
+        }
+
+        // flip card - back
+
+        &.back {
+            .flip:before,
+            .flip:after {
+                background: darken($accent, 5%);
+            }
+
+            .flip:before {
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(-95deg) rotateZ(0deg));
+            }
+
+            .flip:after {
+                @include transform(perspective(1200px) rotateX(0deg) rotateY(95deg) rotateZ(0deg));
+            }
+
+            // flip card - back - hover
+
+            &:hover {
+                .flip:before,
+                .flip:after {
+                    background: $accent;
+                }
+
+                .flip:before {
+                    @include transform(perspective(1200px) rotateX(0deg) rotateY(0deg) rotateZ(0deg));
+                }
+
+                .flip:after {
+                    background: darken($accent, 5%);
+                    @include transform(perspective(1200px) rotateX(0deg) rotateY(95deg) rotateZ(0deg));
+                }
             }
         }
     }
