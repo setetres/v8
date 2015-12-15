@@ -1,5 +1,12 @@
 $(document).ready(function(){
 
+    // mobile
+
+    if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        $('#mirror').removeClass('mirror');
+        $('body').addClass('isMobile');
+    }
+
     // target blank
 
     $('a[rel=external]').attr('target', '_blank');

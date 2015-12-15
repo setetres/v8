@@ -28,6 +28,61 @@
     .center {
         width: 100%;
     }
+
+    .bar .slides .slide {
+        padding: 10px;
+    }
+
+    header {
+        bottom: 0;
+
+        .logo {
+            font-size: 12px;
+            text-align: center;
+            width: 100%;
+
+            a {
+                float: none;
+            }
+        }
+    }
+
+    .project-list {
+        padding: 0 0 125px 0;
+
+        > li {
+            .title {
+                font-size: 12px;
+                line-height: 12px;
+                font-weight: normal;
+                margin-bottom: 10px;
+            }
+
+            .info {
+                position: relative;
+                display: inline-block;
+
+                p:first-child {
+                    display: none;
+                }
+
+                h2,
+                p {
+                    font-size: 12px;
+                    line-height: 12px;
+                    width: 100%;
+                }
+            }
+        }
+    }
+
+    .sub {
+        margin: 20px 0 0 0;
+    }
+
+    .version {
+        display: none;
+    }
 }
 
 // 4 columns
