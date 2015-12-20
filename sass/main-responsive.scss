@@ -29,17 +29,11 @@
         width: 100%;
     }
 
-    .bar .slides .slide {
-        padding: 10px;
-    }
-
     header {
-        bottom: 0;
-
         .logo {
             font-size: 12px;
             text-align: center;
-            width: 100%;
+            width: auto;
 
             a {
                 float: none;

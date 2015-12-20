@@ -100,6 +100,10 @@ body {
 
     &.isMobile {
         overflow: auto;
+
+        header {
+            bottom: 0;
+        }
     }
 }
 
@@ -445,6 +449,15 @@ header {
                 width: 25%;
                 margin: 0;
             }
+
+            p:nth-child(3) {
+                width: 40%;
+            }
+
+            p:last-child {
+                text-align: right;
+                width: auto;
+            }
         }
 
         > a {
@@ -499,10 +512,11 @@ header {
                 left: 0;
                 width: 0;
                 height: 3vw;
-                margin-top: -1vw;
+                margin-top: -1.5vw;
                 pointer-events: none;
                 z-index: -1;
                 @include transition-delay(350ms);
+
             }
 
             i {
@@ -537,7 +551,7 @@ header {
                 color: $white;
 
                 &:before {
-                    @include transition-delay(225ms);
+                    @include transition-delay(350ms);
                     width: 100%;
                 }
 
