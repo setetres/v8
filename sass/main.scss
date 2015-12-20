@@ -14,7 +14,6 @@
 // css3 animations
 
 .project-list li:before,
-.project-list li .title:before,
 .info,
 .button,
 .button .front,
@@ -511,12 +510,11 @@ header {
                 top: 50%;
                 left: 0;
                 width: 0;
-                height: 3vw;
-                margin-top: -1.5vw;
+                height: 1.4vw;
+                margin-top: -0.6vw;
                 pointer-events: none;
                 z-index: -1;
-                @include transition-delay(350ms);
-
+                @include transition(width 700ms cubic-bezier(.20,1,.22,1) 350ms);
             }
 
             i {
@@ -551,8 +549,10 @@ header {
                 color: $white;
 
                 &:before {
-                    @include transition-delay(350ms);
+                    @include transition(width 700ms cubic-bezier(.20,1,.22,1) 350ms);
+                    margin-top: -0.4vw;
                     width: 100%;
+                    height: 2vw;
                 }
 
                 i {
