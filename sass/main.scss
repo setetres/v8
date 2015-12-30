@@ -65,8 +65,8 @@ $accent: #0e2e3b;
 
 // custom vars
 
-$button-width: 73px;
-$button-height: 73px;
+$button-width: 50px;
+$button-height: 50px;
 
 // custom
 
@@ -369,7 +369,7 @@ header {
             }
 
             p {
-                font-size: 11vw;
+                font-size: 10.5vw;
                 line-height: 9vw;
                 margin: 5vw 4.5vw 0 4.5vw;
 
@@ -608,7 +608,7 @@ header {
                 height: $button-height;
                 line-height: $button-height;
                 background: $accent;
-                font-size: 16px;
+                font-size: 13px;
                 text-transform: uppercase;
                 color: $white;
                 // @include border-radius(3px);
