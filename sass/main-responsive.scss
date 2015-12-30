@@ -34,10 +34,6 @@
             font-size: 12px;
             text-align: center;
             width: auto;
-
-            a {
-                float: none;
-            }
         }
     }
 
@@ -84,5 +80,15 @@
 @media (max-width: 479px) {
     .center {
         width: 100%;
+    }
+
+    header {
+        .logo {
+            display: none;
+
+            &.logo-mobile {
+                display: block;
+            }
+        }
     }
 }

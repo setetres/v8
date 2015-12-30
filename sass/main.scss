@@ -281,6 +281,10 @@ header {
         font-size: 13px;
         position: relative;
 
+        &.logo-mobile {
+            display: none;
+        }
+
         a {
             float: left;
         }
@@ -325,7 +329,7 @@ header {
             position: relative;
             padding: 0 20px;
 
-            span {
+            .version {
                 float: right;
             }
 
@@ -407,7 +411,7 @@ header {
 .project-list {
     list-style-type: none;
     margin: 0;
-    padding: 0 0 250px 0;
+    padding: 0 0 150px 0;
 
     > li {
         width: 100%;
@@ -565,6 +569,14 @@ header {
                 }
             }
         }
+
+        &:last-child {
+            border-bottom: 0;
+
+            > div:before {
+                display: none;
+            }
+        }
     }
 }
 
@@ -580,8 +592,8 @@ header {
     > li {
         float: left;
         margin-right: 1px;
+        margin-bottom: 1px;
         position: relative;
-        // margin-right: -1px;
 
         a {
             position: absolute;
@@ -608,11 +620,9 @@ header {
                 height: $button-height;
                 line-height: $button-height;
                 background: $accent;
-                font-size: 13px;
+                font-size: 11px;
                 text-transform: uppercase;
                 color: $white;
-                // @include border-radius(3px);
-                // border: 1px solid $white;
             }
 
             .front {
