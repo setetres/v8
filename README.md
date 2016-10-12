@@ -3,12 +3,12 @@ v8
 
 v8.0 of my website.
 
-![v8](http://files.setetres.st/img/v8-header.gif?v=2&raw=true)
+![v8](http://files.setetres.st/img/v8-desktop.png?v=1&raw=true)
 
 License
 -------
 
-v8 is under a [Creative Commons Attribution License].
+[CC-BY-4.0]
 
 [setetres.st]: http://setetres.st
-[Creative Commons Attribution License]: http://creativecommons.org/licenses/by/4.0
+[CC-BY-4.0]: http://creativecommons.org/licenses/by/4.0
