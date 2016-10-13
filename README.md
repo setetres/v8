@@ -3,7 +3,7 @@ v8
 
 v8.0 of my website. [http://setetres.st]
 
-![v8](http://files.setetres.st/img/v8-desktop.png?v=2&raw=true)
+![v8](http://files.setetres.st/img/v8-desktop.png?v=3&raw=true)
 
 License
 -------
