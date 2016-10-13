@@ -1,4 +1,4 @@
-v8
+v8 [![Github License](https://img.shields.io/github/license/setetres/v8.svg)](https://raw.githubusercontent.com/setetres/v8/master/LICENSE)
 ==
 
 v8.0 of my website. [http://setetres.st]
