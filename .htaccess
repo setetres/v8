@@ -1,17 +1,17 @@
+Redirect 301 /curisco http://curisco.xxxxxxx.ooo
 Redirect 301 /ello http://ello.co/setetres
 Redirect 301 /email mailto:x@setetres.st
 Redirect 301 /ebmfw http://github.com/setetres/evenbettermotherfuckingwebsite
 Redirect 301 /facebook http://fb.com/setetres.st
-Redirect 301 /feedhop http://feedhop.io/u/setetres
 Redirect 301 /github http://github.com/setetres
+Redirect 301 /ijwgh http://ijwgh.xxxxxxx.ooo
 Redirect 301 /instagram http://instagr.am/setetres
 Redirect 301 /linkedin http://linkedin.com/in/guilhermepangnotta
 Redirect 301 /medium http://medium.com/@setetres
 Redirect 301 /resume http://docs.google.com/document/d/1EIoI0uGPfIEZyT0nWnaUzBLMLRAYsAhC4y9HgFNOsYk/edit?usp=sharing
 Redirect 301 /sasstarter http://github.com/setetres/sasstarter
-Redirect 301 /starter http://github.com/setetres/starter
 Redirect 301 /twitter http://twitter.com/setetres
-Redirect 301 /tumblr http://xxxxxxx.ooo
+Redirect 301 /xxxxxxxooo http://xxxxxxx.ooo
 Redirect 301 /vimeo http://vimeo.com/setetres
 
 ErrorDocument 400 /index.html

@@ -1,9 +1,7 @@
 v8 [![Github License](https://img.shields.io/github/license/setetres/v8.svg)](https://github.com/setetres/v8/blob/master/LICENSE)
 ==
 
-v8.0 of my website. [http://setetres.st]
-
-[![v8](http://files.setetres.st/img/v8-desktop.png?v=3&raw=true)](http://setetres.st)
+[![v8](http://setetres.s3.amazonaws.com/setetres.st/img/v8-desktop.png?v=1&raw=true)](http://setetres.st)
 
 License
 -------
